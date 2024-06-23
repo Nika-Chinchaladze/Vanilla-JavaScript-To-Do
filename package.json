@@ -1,0 +1,15 @@
+{
+  "name": "vanilla-javascript-book-todo",
+  "version": "1.0.0",
+  "description": "vanilla javascript crud project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "nika chinchaladze",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2"
+  }
+}
