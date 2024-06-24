@@ -94,7 +94,7 @@ hr {
 .edit-btn {
     margin: 5px 0;
     width: 100px;
-    height: 35%;
+    height: 25px;
     font-weight: bold;
     border: 1px solid rgb(8, 8, 80);
     border-radius: 3px;
@@ -108,7 +108,7 @@ hr {
 
 .delete-btn {
     width: 100px;
-    height: 35%;
+    height: 25px;
     font-weight: bold;
     border: 1px solid rgb(61, 3, 3);
     background-color: red;
@@ -118,4 +118,7 @@ hr {
 .delete-btn:hover {
     cursor: pointer;
     background-color: rgb(92, 3, 3);
+}
+#no-books {
+    text-align: center;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRUD App</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/main.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1 data-cy="main-title" id="app-title">Basic CRUD App With Vanilla JavaScript</h1>
+        <form action="/create" data-cy="form" id="form-element" method="POST">
+          <input
+            id="title-input"
+            data-cy="title-input"
+            type="text"
+            name="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            id="author-input"
+            data-cy="author-input"
+            type="text"
+            name="author"
+            placeholder="Author"
+            required
+          />
+          <input
+            id="image-input"
+            data-cy="image-input"
+            type="text"
+            name="image"
+            placeholder="Image"
+            required
+          />
+          <input
+            id="price-input"
+            data-cy="price-input"
+            type="number"
+            name="price"
+            placeholder="Price"
+            required
+          />
+          <button id="submit-btn" data-cy="submit-btn" type="submit">Add</button>
+        </form>
+  
+        <hr></hr>
+        <h2 data-cy="content-title" id="content-title">Available Books</h2>
+    
+        <ul id="main-content" data-cy="book-content">
+          <% if (books.length > 0) { %>
+            <% books.forEach((book, index) => { %>
+              <li class='list-item'>
+                  <img src="<%= book.image %>" alt="img"></img>
+                  <div class="text-div">
+                  <p class="p-id" hidden><%= book._id %></p>
+                  <p><b>Title:</b> <span class="p-title"><%= book.title %></span></p>
+                  <p><b>Author:</b> <span class="p-author"><%= book.author %></span></p>
+                  <p><b>Price:</b> $<span class="p-price"><%= book.price %></span></p>
+                  </div>
+
+                  <div class='button-space'>
+                    <button class='edit-btn'>Edit</button>
+                    <form action="/delete/<%= book._id %>" method="POST">
+                      <button class='delete-btn' type="submit">Delete</button>
+                    </form>
+                  </div>
+              </li>
+            <% }) %>
+          <% } else { %>
+            <p id="no-books" data-cy="no-books">No books available</p>
+          <% } %>
+        </ul>
+
+      </div>
+</body>
+</html>
